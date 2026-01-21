@@ -19,3 +19,6 @@ This command queues the testing of the model on unseen data and outputs a gross 
 
 ## 5. EKF and plotting the results - "sbatch run_ekf.sh" then "sbatch run_plots.sh"
 This first command makes use of the CSV raw outputs and the NPY files to see if the predictions of the model by itself and together with the filter. After the "run_ekf.sh" finishes we are only left with trajectory, therefore we need to also run the "run_plots.sh" file to get the outputs of all that data (acceleration bias and error, displacement, trajectory in 2D and 3D, rotation error, etc.). 
+
+# Notes on GitHub directories
+To separate our findings clearly we have a "Results" directory which is host to the outputs of our model, further separated into "Training_Results", "Test_Results", "EKF_Results", "Custom_Results". Each of these will have a small Markdown file explaining its contents.
