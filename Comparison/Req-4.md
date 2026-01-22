@@ -1,1 +1,2 @@
 ## Validation of the Should requirement
+For this experiment we determined a straight line to be the course. The course is once taken on foot, the model's prediction being saved in "view-walking.png". Once more, the course is taken but this time on a wheelchair that is pushed from behind and this time the results are saved in "view-walking.png". The contrast is stark and obvious when comparing the two images. 
