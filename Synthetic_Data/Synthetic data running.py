@@ -22,11 +22,17 @@ def generate_realistic_tlio(motion_type="running"):
     gyr_clean = np.zeros((num_rows, 3))
     
     if motion_type == "running":
-        # Vertical bounce (3Hz) + impact harmonic (6Hz)
-        acc_clean[:, 2] = 5.0 * np.sin(2 * np.pi * 3 * t_sec) + 1.5 * np.sin(2 * np.pi * 6 * t_sec)
-        # Forward thrust
-        acc_clean[:, 1] = 2.0 * np.abs(np.sin(2 * np.pi * 1.5 * t_sec))
-        # Lateral sway (Roll)
+        # --- SWAPPED AXES FOR Y-GRAVITY ---
+        # 1. Vertical bounce (Impacts) -> NOW ON Y (Index 1)
+        # We also add the impact harmonic here.
+        acc_clean[:, 1] = 5.0 * np.sin(2 * np.pi * 3 * t_sec) + 1.5 * np.sin(2 * np.pi * 6 * t_sec)
+        
+        # 2. Forward thrust -> NOW ON Z (Index 2)
+        # (Assuming the device is held upright, Z is often "Forward" relative to the screen)
+        acc_clean[:, 2] = 2.0 * np.abs(np.sin(2 * np.pi * 1.5 * t_sec))
+        
+        # 3. Lateral sway (Roll) -> KEEPS ON X (Index 0)
+        # Rotating the device around X doesn't change X-axis logic.
         gyr_clean[:, 0] = 0.15 * np.cos(2 * np.pi * 1.5 * t_sec)
 
     # 4. SENSOR REALISM LAYER
@@ -40,7 +46,7 @@ def generate_realistic_tlio(motion_type="running"):
     # 5. FINAL ASSEMBLY (Crucial: Add Gravity)
     # TLIO needs gravity (9.81) to orient itself!
     acc_final = acc_clean + acc_noise + acc_bias
-    acc_final[:, 2] += 9.81 
+    acc_final[:, 1] += 9.81 
     
     gyr_final = gyr_clean + gyr_noise
 
@@ -55,13 +61,16 @@ def generate_realistic_tlio(motion_type="running"):
     data[:, 10] = 1.0 # Initial Quaternion W
     
     # Simple integration for Pos/Vel Ground Truth
+    # Note: We integrate acc_clean (movement only), NOT acc_final (which has gravity)
     vel_gt = np.cumsum(acc_clean, axis=0) * dt
     pos_gt = np.cumsum(vel_gt, axis=0) * dt
     data[:, 11:14] = pos_gt
     data[:, 14:17] = vel_gt
 
+    filename = f"realistic_{motion_type}_Y_gravity.csv"
     df = pd.DataFrame(data, columns=headers)
-    df.to_csv(f"realistic_{motion_type}.csv", index=False)
-    print(f"Generated realistic_{motion_type}.csv")
+    df.to_csv(filename, index=False)
+    print(f"Generated {filename}")
 
-generate_realistic_tlio("running")
+if __name__ == "__main__":
+    generate_realistic_tlio("running")
