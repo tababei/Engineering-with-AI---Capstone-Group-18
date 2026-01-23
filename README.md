@@ -1,7 +1,7 @@
 # Engineering with AI - Capstone Group 18
 This is a repository containing the process, code that we have used, and results we have obtained for our Capstone project in the Engineering with AI minor.
 
-We have used the Delft Blue supercomputer to help facilitate rapid training, testing of the model, as well as running the Extended Karman Filter (EKF) and generating the final plots. The base code used in our project is located at [TLIO](https://github.com/CathIAS/TLIO). The main idea of that paper was to study the improvements of an AI used in combination with a more traditional approach to GNSS-restricted localization. 
+We have used the Delft Blue supercomputer to help facilitate rapid training, testing of the model, as well as running the Extended Kalman Filter (EKF) and generating the final plots. The base code used in our project is located at [TLIO](https://github.com/CathIAS/TLIO). The main idea of that paper was to study the improvements of an AI used in combination with a more traditional approach to GNSS-restricted localization. 
 
 In order to use the code our approach closely follows this line of thinking: create a suitable environment on a Linux OS machine (Delft Blue in our case), train the algorithm, test the algorithm, run it with EKF and get the resulting plots. The data the paper uses is not in their original repository and must be downloaded from a separate [Google Drive](https://drive.google.com/file/d/10Bc6R-s0ZLy9OEK_1mfpmtDg3jIu8X6g/view). 
 
