@@ -9,4 +9,4 @@ Along the Y-axis we have a bobbing motion and in the ZX-plane a constant acceler
 
 To validate this requirement we have recorded while standing still and also create a new file that should simulate this (constant acceleration only along Y-axis). The results can be observed in the "view-still_SYNTH" and "view-still_exp" files. The model performs considerably worse on our simulated data. One explanation for this is that we cannot replicate genuine organic movement specific to a human. To get better data, more sophisticated software is required.
 
-> **Note:** The obtained csv files must be ran through "custom_script_indoors-data.py" to get the according npy file as well as the appropriate data to put in the JSON description file. Each folder that needs to be fed into the model needs to have 4 files: csv file, npy file, calibration JSON file, description file of npy file.
+> **Note:** The obtained csv files must be ran through "custom_script_indoors-data.py" to get the according npy file as well as the appropriate data to put in the JSON description file. In case the sampling is 100Hz or lower, the file needs to be upsampled to 200Hz for the model to work properly. 
