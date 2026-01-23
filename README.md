@@ -23,13 +23,13 @@ This command queues the testing of the model on unseen data and outputs a gross 
 This first command makes use of the CSV raw outputs and the NPY files to see if the predictions of the model by itself and together with the filter. After the `run_ekf.sh` finishes we are only left with trajectory, therefore we need to also run the "run_plots.sh" file to get the outputs of all that data (acceleration bias and error, displacement, trajectory in 2D and 3D, rotation error, etc.). 
 
 ## Notes on GitHub directories
-To separate our findings clearly we have a "Results" directory which is host to the outputs of our model, further separated into "Training_Results", "Test_Results", "EKF_Results", "Custom_Results". Each of these will have a small Markdown file explaining its contents. 
+To separate our findings clearly we have a "Results" directory which is host to the outputs of our model, further separated into "Training_Results", "Test_Results", "EKF_Results", "Custom_Results". Each of these will have a small Markdown file explaining its contents. The [Results directory](./Results) serves to validate the completion of the first Must requirement.  
 
-The "Synthetic_Data" directory contains the files and results that prove the second and third Must requirements have been completed. 
+The [Synthetic_Data directory](./Synthetic_Data) contains the files and results that prove the second and third Must requirements have been completed. 
 
-The "Comparison" directory contains proof of completion for the Should requirement.
+The [Comparison directory](./Comparison) contains proof of completion for the Should requirement.
 
-The "Robustness" directory contains the results of experimental data tests on the model, completing the first Could requirement. 
+The [Robustness directory](./Robustness) contains the results of experimental data tests on the model, completing the first Could requirement. 
 
 ## Further notes on using the model on custom data 
 Inside the [Google Drive](https://drive.google.com/file/d/10Bc6R-s0ZLy9OEK_1mfpmtDg3jIu8X6g/view) data folder there are a series of text files named "all_ids.txt", "test_list.txt", "train_list.txt", "val_list.txt". In order to run custom data, these files must be edited as such:
