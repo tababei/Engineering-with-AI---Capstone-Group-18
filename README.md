@@ -11,7 +11,7 @@ To begin with, we upload the TLIO repository to our dedicated storage in the sup
 In case of failure, stop the upload (as all subsequent uploads will begin failing) and take note of the last uploaded folder. Click on the "Help" button above and select "Restart Web Server". On the next upload attempt, selection starts from that last deleted folder. Note that this may take numerous attempts. Once all the data has been uploaded we can move onto the next step.
 
 ## 2. Environment creation - "sbatch tlio_env.sh"
-The code needs an environment to run on, containing all the neccesary packages and versions of Python, PyTorch, Numpy, etc.. We have automated this process to just running our `tlio_env.sh` file. To queue this file you must be in the "TLIO" directory and type `sbatch tlio_env.sh` or `srun tlio_env.sh` if you wish to run it in your local terminal on the supercomputer. This command applies to all our files and can be summarized as this: `sbatch YOUR_FILE.sh`. 
+The code needs an environment to run on, containing all the necessary packages and versions of Python, PyTorch, Numpy, etc. We have automated this process to just running our `tlio_env.sh` file. To queue this file you must be in the "TLIO" directory and type `sbatch tlio_env.sh` or `srun tlio_env.sh` if you wish to run it in your local terminal on the supercomputer. This command applies to all our files and can be summarized as this: `sbatch YOUR_FILE.sh`. 
 
 ## 3. Training the model - "sbatch train_conda_final.sh"
 The model must be trained on some type of data in order for it to learn how to correctly predict the movement. `sbatch train_conda_final.sh` is the command that will queue the training of the model. We have trained two models, one with 10 Epochs, and the other with 100 Epochs. A 10% improvement has been noticed with the tenfold increase in training time. The training lasted around 15 minutes for 10 Epochs and around 2 hours and 30 minutes for 100 Epochs. 
@@ -36,10 +36,10 @@ The [Robustness directory](./Robustness) contains the results of experimental da
 ## Further notes on using the model on custom data 
 Inside the [Google Drive](https://drive.google.com/file/d/10Bc6R-s0ZLy9OEK_1mfpmtDg3jIu8X6g/view) data folder there are a series of text files named "all_ids.txt", "test_list.txt", "train_list.txt", "val_list.txt". In order to run custom data, these files must be edited as such:
 
-1) Open the desired file with any text editor
-2) At the top insert a new line which contains the name of the custom directory (i.e. "custom_walking")
-3) In OnDemand create a new directory with the same name as before ("custom_walking")
-4) Inside this new directory add the four corresponding files (see "Custom_data_example")
-5) The next time you run the model this new data will be used
+1. Open the desired file with any text editor
+2. At the top insert a new line which contains the name of the custom directory (i.e. "custom_walking")
+3. In OnDemand create a new directory with the same name as before ("custom_walking")
+4. Inside this new directory add the four corresponding files (see "Custom_data_example")
+5. The next time you run the model this new data will be used
 
 **There are some limitations in how short the data can be. If this is the case an error will be raised in the output logs.**
