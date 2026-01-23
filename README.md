@@ -37,4 +37,7 @@ Inside the [Google Drive](https://drive.google.com/file/d/10Bc6R-s0ZLy9OEK_1mfpm
 1) Open the desired file with any text editor
 2) At the top insert a new line which contains the name of the custom directory (i.e. "custom_walking")
 3) In OnDemand create a new directory with the same name as before ("custom_walking")
-4) Inside this new directory add the 4 files (see ...)
+4) Inside this new directory add the four corresponding files (see "Custom_data_example")
+5) The next time you run the model this new data will be used
+
+**There are some limitations in how short the data can be. If this is the case an error will be raised in the output logs.**
