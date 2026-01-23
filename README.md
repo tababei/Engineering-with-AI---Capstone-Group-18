@@ -26,16 +26,24 @@ This command queues the testing of the model on unseen data and outputs a gross 
 ## 5. EKF and plotting the results - "sbatch [run_ekf.sh](./run_ekf.sh)" then "sbatch [run_plots.sh](./run_plots.sh)"
 This first command makes use of the CSV raw outputs and the NPY files to compare the predictions of the model by itself and together with the filter. After the `run_ekf.sh` finishes we are only left with trajectory, therefore we need to also run the "run_plots.sh" file to get the outputs of all that data (acceleration bias and error, displacement, trajectory in 2D and 3D, rotation error, etc.). 
 
-## Notes on GitHub directories
+## Directory Structure and Validation
 To separate our findings clearly we have a [Results directory](./Results) which is host to the outputs of our model, further separated into "Training_Results", "Test_Results", "EKF_Results", "Custom_Results". Each of these will have a small Markdown file explaining its contents. 
 
-This README file and [Results directory](./Results) serve to validate the completion of the first **Must** requirement.  
+* **This README and [Results/Req-1.md](./Results/Req-1.md)**
+  * **Validates:** The first **Must** requirement.
+  * **Contents:** Proof of Linux environment setup, model training logs (in `Model/`), test metrics (`Test_Results/`), and EKF trajectory plots (`EKF_Results/`).
 
-The [Synthetic_Data directory](./Synthetic_Data) contains the files and results that prove the second and third **Must** requirements have been completed. 
+* **[Synthetic_Data/Reqs_2-3.md](./Synthetic_Data/Reqs_2-3.md)**
+  * **Validates:** The second and third **Must** requirements.
+  * **Contents:** Scripts for generating synthetic motion and the comparative analysis between Real vs. Synthetic performance.
 
-The [Comparison directory](./Comparison) contains proof of completion for the **Should** requirement.
+* **[Comparison/Req-4.md](./Comparison/Req-4.md)**
+  * **Validates:** The **Should** requirement.
+  * **Contents:** A critical analysis of learned features (step detection) comparing "Walking" vs. "Wheelchair/Rolling" data.
 
-The [Robustness directory](./Robustness) contains the results of experimental data tests on the model, completing the first **Could** requirement. 
+* **[Robustness/Req-5.md](./Robustness/Req-5.md)**
+  * **Validates:** The first **Could** requirement.
+  * **Contents:** Experimental results using a Smartphone IMU, analyzing sensor drift and outdoor performance capabilities.
 
 ## Further notes on using the model on custom data 
 Inside the [Google Drive](https://drive.google.com/file/d/10Bc6R-s0ZLy9OEK_1mfpmtDg3jIu8X6g/view) data folder there are a series of text files named "all_ids.txt", "test_list.txt", "train_list.txt", "val_list.txt". In order to run custom data, these files must be edited as such:
