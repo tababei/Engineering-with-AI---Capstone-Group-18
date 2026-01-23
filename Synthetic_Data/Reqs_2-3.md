@@ -1,7 +1,7 @@
 # Validation of second Must requirement
 > **Must** be able to synthesize their own simulated accelerometer and gyroscope data which demonstrate different types of motion i.e., a wheeled robot, a human walking, a flying drone etc.
 
-We were able to simulate running data with the help of "Synthetic data running.py". We consider the Y-axis to align with the gravity vector, thus the XZ-plane is host to the horizontal movement plane. 
+We were able to simulate running data with the help of [Synthetic data running.py](./Synthetic-data-running.py). We consider the Y-axis to align with the gravity vector, thus the XZ-plane is host to the horizontal movement plane. 
 Along the Y-axis we have a bobbing motion and in the ZX-plane a constant acceleration that only acts along one of the axes. 
 
 # Validation of third Must requirement 
