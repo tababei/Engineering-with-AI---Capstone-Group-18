@@ -25,7 +25,7 @@ This first command makes use of the CSV raw outputs and the NPY files to see if 
 ## Notes on GitHub directories
 To separate our findings clearly we have a [Results directory](./Results) which is host to the outputs of our model, further separated into "Training_Results", "Test_Results", "EKF_Results", "Custom_Results". Each of these will have a small Markdown file explaining its contents. 
 
-The [Results directory](./Results) serves to validate the completion of the first **Must** requirement.  
+The current and [Results directory](./Results) serve to validate the completion of the first **Must** requirement.  
 
 The [Synthetic_Data directory](./Synthetic_Data) contains the files and results that prove the second and third **Must** requirements have been completed. 
 
