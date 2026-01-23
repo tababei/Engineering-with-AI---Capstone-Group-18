@@ -3,3 +3,6 @@
 The results located in this directory confirm the completion of the first "Must". They align with our approach in the Project Plan as they closely resemble the findings illustrated in the paper. 
 
 We have logs, figures and the saved model to show that we were able to train ("Model" directory), test ("Test_Results") and run the EKF ("EKF_Results"), all of which are parts of the code.
+
+**Training and validation plot:**
+![Plot](./Model/training_plot.png)
