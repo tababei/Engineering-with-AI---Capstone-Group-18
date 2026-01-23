@@ -12,7 +12,7 @@ To begin with, we upload the TLIO repository to our dedicated storage in the sup
 > 2. Click on the "Help" button above and select "Restart Web Server"
 > 3. On the next upload attempt, selection starts from that last deleted folder.
 > 
-> Note that this may take numerous attempts. Once all the data has been uploaded we can move onto the next step.
+> This may take numerous attempts. Once all the data has been uploaded we can move onto the next step.
 
 ## 2. Environment creation - "sbatch [tlio_env.sh](./tlio_env.sh)"
 The code needs an environment to run on, containing all the necessary packages and versions of Python, PyTorch, Numpy, etc. We have automated this process to just running our `tlio_env.sh` file. To queue this file you must be in the "TLIO" directory and type `sbatch tlio_env.sh` or `srun tlio_env.sh` if you wish to run it in your local terminal on the supercomputer. This command applies to all our files and can be summarized as this: `sbatch YOUR_FILE.sh`. 
