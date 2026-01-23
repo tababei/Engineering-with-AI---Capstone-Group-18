@@ -6,4 +6,7 @@ This experiment entails walking in a rectangular pattern multiple times, both cl
 ![Rectangular Path Drifting](./view-rect1-CC.png)
 
 One interesting observation is that the model can work to some extent even outdoors in the absence of severe perturbations.
-![Outdoors Trip](./view-OUTDOORS-SUCCESS.png)
+| **Model Prediction** | **Actual Path** |
+|:---:|:---:|
+| ![Walking](./view-OUTDOORS-SUCCESS.png) | ![Rolling](./outdoors_validation.jpeg) |
+| *Note the spikes in vertical displacement (dy) indicating steps.* | *Display of actual path taken by the device.* |
